@@ -9,16 +9,19 @@ import convert from 'convert';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <h1>Hello from {{name}}!</h1>
-    <a target="_blank" href="https://angular.io/start">
-      Learn more about Angular 16.1.1 
-    </a>
+    <h1>Unit Conversion Test Cases</h1>
     <p>Distance(miles): 1.6145 kilometers = {{m}} miles</p>
     <p>Weight(ounces): 12 pounds = {{g}} ounces</p>
     <p>Digit(KiB): 8192 bytes = {{d}} KiB</p>
     <p>Pressure(kPa): 10 atmospheres = {{a}} kPa</p>
     <p>Temperature(fahrenheit): 0 celsius = {{t}} fahrenheit</p>
     <p>Temperature(kelvin): 32 fahrenheit = {{k}} kelvin</p>
+    <hr style="width:60%;text-align:left;margin-left:0">
+    <h3>Hello from {{name}}!</h3>
+    <a target="_blank" href="https://angular.io/start">
+      Learn more about Angular 16.1.1 
+    </a>
+
   `,
 })
 export class App {
@@ -31,6 +34,8 @@ export class App {
   a = convert(10, 'atmospheres').to('kPa');
   t = Math.round(convert(0, 'celsius').to('fahrenheit'));
   k = Math.round(convert(32, 'fahrenheit').to('kelvin'));
+
+  // https://convert.js.org/#md:convert
 }
 
 bootstrapApplication(App);
